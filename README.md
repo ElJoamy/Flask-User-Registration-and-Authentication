@@ -51,13 +51,22 @@ Siga estos pasos para ejecutar la aplicación en su entorno local:
 
     Asegúrese de que `RUTA_CSV_PAISES` apunte al archivo `paises.csv` en el directorio raíz del proyecto.
 
-4. Ejecute el siguiente comando en la raíz del proyecto para iniciar la aplicación:
+4. En el archivo `docker-compose.yml`, asegurese de cambair lo siguiente:
+
+    ```yml
+        parent: ens33 # Reemplaza esto con el nombre de la interfaz del host que deseas utilizar
+
+        - subnet: <tu_subnet_elegido>  # Reemplaza esto con tu subnet deseado, p. ej., "192.168.1.0/24"
+        - gateway: <tu_gateway_elegido>  # Reemplaza esto con tu gateway deseado, p. ej., "192.168.1.2
+    ```
+
+5. Ejecute el siguiente comando en la raíz del proyecto para iniciar la aplicación:
 
     ```bash
     docker-compose up --build
     ```
 
-5. La aplicación estará disponible en `http://localhost:5000` en su navegador.
+6. La aplicación estará disponible en `http://localhost:5000` en su navegador.
 
 ## Funcionalidades de la Aplicación
 
