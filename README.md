@@ -51,13 +51,24 @@ Siga estos pasos para ejecutar la aplicación en su entorno local:
 
     Asegúrese de que `RUTA_CSV_PAISES` apunte al archivo `paises.csv` en el directorio raíz del proyecto.
 
-4. En el archivo `docker-compose.yml`, asegurese de cambair lo siguiente:
+4. En el archivo `create_macvlan.sh`, asegurese de cambair lo siguiente:
 
-    ```yml
-        parent: ens33 # Reemplaza esto con el nombre de la interfaz del host que deseas utilizar
+    ```sh
+    --subnet=192.168.232.0/24 \ # Cambiar la subred por la que se desea o a la que se encuentra conectado
+    --gateway=192.168.232.2 \ # Cambiar la puerta de enlace por la que se desea o a la que se encuentra conectado
+    -o parent=ens33 \ # Cambiar la interfaz de red por la que se desea o a la que se encuentra conectado
+    ```
 
-        - subnet: <tu_subnet_elegido>  # Reemplaza esto con tu subnet deseado, p. ej., "192.168.1.0/24"
-        - gateway: <tu_gateway_elegido>  # Reemplaza esto con tu gateway deseado, p. ej., "192.168.1.2
+    luego dar permisos de ejecución al archivo:
+
+    ```bash
+    chmod +x create_macvlan.sh
+    ```
+
+    y ejecutarlo:
+
+    ```bash
+    ./create_macvlan.sh
     ```
 
 5. Ejecute el siguiente comando en la raíz del proyecto para iniciar la aplicación:
@@ -94,15 +105,21 @@ La aplicación web de registro de usuarios ofrece las siguientes funcionalidades
 
 - La aplicación valida y procesa las actualizaciones de perfil de manera segura.
 
+- Puede actualizar su perfil en `http://localhost:5000/users/id_del_usuario` después de iniciar sesión con algun software como Postman.
+
 ### Consulta de Usuarios
 
 - La aplicación permite consultar la lista de usuarios registrados en la base de datos.
 
 - Los datos de los usuarios se almacenan en una base de datos MongoDB.
 
+- Puede ver la lista de usuarios registrados en la base de datos desde en `http://localhost:5000/users`
+
 ### Eliminación de Usuarios
 
 - Los administradores pueden eliminar usuarios de la base de datos.
+
+- Puede eliminar usuarios de la base de datos desde en `http://localhost:5000/users` utilizando un softare como Postman.
 
 ## Personalización de la Plantilla
 
