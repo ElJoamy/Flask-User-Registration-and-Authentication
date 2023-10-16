@@ -42,7 +42,7 @@ Siga estos pasos para ejecutar la aplicación en su entorno local:
     cd nombre-de-tu-proyecto
     ```
 
-3. Cree un archivo `.env` basado en el archivo `.env.example` proporcionado y configure las variables de entorno necesarias. Las variables de entorno definidas en `.env` son esenciales para el funcionamiento de la aplicación. Asegúrese de configurarlas correctamente. Aquí hay un ejemplo de configuración para el archivo `.env`:
+3. Cree un archivo `.env` basado en el archivo `.env.example` proporcionado (o puede cambiarle el nombre con el comando: `mv .env.example .env`) y configure las variables de entorno necesarias. Las variables de entorno definidas en `.env` son esenciales para el funcionamiento de la aplicación. Asegúrese de configurarlas correctamente. Aquí hay un ejemplo de configuración para el archivo `.env`:
 
     ```env
     RUTA_CSV_PAISES=paises.csv
